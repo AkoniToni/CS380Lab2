@@ -143,7 +143,17 @@ class BinarySearchTree{
    with a largest key
    */
    public int getMax(Node root){
-	  //implement me
+	  // if the starting point is null, the tree is empty
+      if (root == null) {
+         System.out.println("The Tree is empty");
+         return -1;
+      } 
+      
+      // keep going right until right is null
+      if (root.right == null) {
+         return root.data;
+      }
+      return getMin(root.right);
    }
    
    
