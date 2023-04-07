@@ -106,6 +106,7 @@ class BinarySearchTree{
          return false;
       }
       
+      // if the root == value, return true, otherwise go left or right
       if(root.value == key){
          return true;      
       }else if(key < root.value){
@@ -122,7 +123,17 @@ class BinarySearchTree{
    with a smallest key
    */
    public int getMin(Node root){
-      //implement me
+      // if the starting point is null, the tree is empty
+      if (root == null) {
+         System.out.println("The Tree is empty");
+         return -1;
+      } 
+      
+      // keep going left until left is null
+      if (root.left == null) {
+         return root.data;
+      }
+      return getMin(root.left);
    }
   
   
